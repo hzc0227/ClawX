@@ -1,7 +1,7 @@
 {
     "steps": {
         "welcome": {
-            "title": "ClawXへようこそ",
+            "title": "JdiCLawへようこそ",
             "description": "AIアシスタントの設定準備が整いました"
         },
         "runtime": {
@@ -22,12 +22,12 @@
         },
         "complete": {
             "title": "完了！",
-            "description": "ClawXを使用する準備が整いました"
+            "description": "JdiCLawを使用する準備が整いました"
         }
     },
     "welcome": {
-        "title": "ClawXへようこそ",
-        "description": "ClawXはOpenClawのグラフィカルインターフェースで、お気に入りのメッセージングプラットフォームでAIアシスタントを簡単に使用できます。",
+        "title": "JdiCLawへようこそ",
+        "description": "JdiCLawは OpenClaw をベースにした企業向けデスクトップエージェントワークスペースで、AI アシスタントと社内業務機能を 1 つの UI で利用できます。",
         "features": {
             "noCommand": "コマンドライン不要",
             "modernUI": "モダンで美しいインターフェース",
@@ -108,7 +108,7 @@
     },
     "complete": {
         "title": "セットアップ完了！",
-        "subtitle": "ClawXの構成が完了し、使用準備が整いました。AIアシスタントとのチャットを開始できます。",
+        "subtitle": "JdiCLawの構成が完了し、使用準備が整いました。AIアシスタントとのチャットを開始できます。",
         "provider": "AI プロバイダー",
         "components": "コンポーネント",
         "gateway": "ゲートウェイ",

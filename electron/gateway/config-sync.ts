@@ -1,12 +1,17 @@
 import { app } from 'electron';
 import path from 'path';
 import { existsSync, readFileSync, cpSync, mkdirSync, rmSync } from 'fs';
-import { homedir } from 'os';
 import { join } from 'path';
 import { getAllSettings } from '../utils/store';
 import { getApiKey, getDefaultProvider, getProvider } from '../utils/secure-storage';
 import { getProviderEnvVar, getKeyableProviderTypes } from '../utils/provider-registry';
-import { getOpenClawDir, getOpenClawEntryPath, isOpenClawPresent } from '../utils/paths';
+import {
+  getOpenClawDir,
+  getOpenClawEntryPath,
+  getOpenClawExtensionsDir,
+  getOpenClawRuntimeEnv,
+  isOpenClawPresent,
+} from '../utils/paths';
 import { getUvMirrorEnv } from '../utils/uv-env';
 import { listConfiguredChannels } from '../utils/channel-config';
 import { syncGatewayTokenToConfig, syncBrowserConfigToOpenClaw, sanitizeOpenClawConfig } from '../utils/openclaw-auth';
@@ -72,7 +77,8 @@ function ensureConfiguredPluginsUpgraded(configuredChannels: string[]): void {
     if (!pluginInfo) continue;
     const { dirName, npmName } = pluginInfo;
 
-    const targetDir = join(homedir(), '.openclaw', 'extensions', dirName);
+    const extensionsDir = getOpenClawExtensionsDir();
+    const targetDir = join(extensionsDir, dirName);
     const targetManifest = join(targetDir, 'openclaw.plugin.json');
     const isInstalled = existsSync(targetManifest);
     const installedVersion = isInstalled ? readPluginVersion(join(targetDir, 'package.json')) : null;
@@ -87,7 +93,7 @@ function ensureConfiguredPluginsUpgraded(configuredChannels: string[]): void {
       if (!isInstalled || (sourceVersion && installedVersion && sourceVersion !== installedVersion)) {
         logger.info(`[plugin] ${isInstalled ? 'Auto-upgrading' : 'Installing'} ${channelType} plugin${isInstalled ? `: ${installedVersion} → ${sourceVersion}` : `: ${sourceVersion}`} (bundled)`);
         try {
-          mkdirSync(join(homedir(), '.openclaw', 'extensions'), { recursive: true });
+          mkdirSync(extensionsDir, { recursive: true });
           rmSync(targetDir, { recursive: true, force: true });
           cpSync(bundledDir, targetDir, { recursive: true, dereference: true });
           fixupPluginManifest(targetDir);
@@ -109,7 +115,7 @@ function ensureConfiguredPluginsUpgraded(configuredChannels: string[]): void {
 
       logger.info(`[plugin] ${isInstalled ? 'Auto-upgrading' : 'Installing'} ${channelType} plugin${isInstalled ? `: ${installedVersion} → ${sourceVersion}` : `: ${sourceVersion}`} (dev/node_modules)`);
       try {
-        mkdirSync(join(homedir(), '.openclaw', 'extensions'), { recursive: true });
+        mkdirSync(extensionsDir, { recursive: true });
         copyPluginFromNodeModules(npmPkgPath, targetDir, npmName);
         fixupPluginManifest(targetDir);
       } catch (err) {
@@ -266,6 +272,7 @@ export async function prepareGatewayLaunchContext(port: number): Promise<Gateway
     ...providerEnv,
     ...uvEnv,
     ...proxyEnv,
+    ...getOpenClawRuntimeEnv(),
     OPENCLAW_GATEWAY_TOKEN: appSettings.gatewayToken,
     OPENCLAW_SKIP_CHANNELS: skipChannels ? '1' : '',
     CLAWDBOT_SKIP_CHANNELS: skipChannels ? '1' : '',

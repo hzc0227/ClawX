@@ -26,11 +26,30 @@ export function expandPath(path: string): string {
   return path;
 }
 
+export function toHomeTildePath(path: string): string {
+  const home = homedir();
+  if (path === home) return '~';
+  if (path.startsWith(`${home}/`)) {
+    return path.replace(home, '~');
+  }
+  return path;
+}
+
 /**
- * Get OpenClaw config directory
+ * Get JdiCLaw-managed OpenClaw state directory.
+ * This intentionally does not reuse ~/.openclaw so the desktop product
+ * keeps its own isolated runtime data.
  */
 export function getOpenClawConfigDir(): string {
-  return join(homedir(), '.openclaw');
+  return join(getDataDir(), 'openclaw');
+}
+
+export function getOpenClawStateDir(): string {
+  return getOpenClawConfigDir();
+}
+
+export function getOpenClawConfigPath(): string {
+  return join(getOpenClawConfigDir(), 'openclaw.json');
 }
 
 /**
@@ -38,6 +57,43 @@ export function getOpenClawConfigDir(): string {
  */
 export function getOpenClawSkillsDir(): string {
   return join(getOpenClawConfigDir(), 'skills');
+}
+
+export function getOpenClawExtensionsDir(): string {
+  return join(getOpenClawConfigDir(), 'extensions');
+}
+
+export function getOpenClawCredentialsDir(): string {
+  return join(getOpenClawConfigDir(), 'credentials');
+}
+
+export function getOpenClawMediaDir(): string {
+  return join(getOpenClawConfigDir(), 'media');
+}
+
+export function getOpenClawAgentsDir(): string {
+  return join(getOpenClawConfigDir(), 'agents');
+}
+
+export function getOpenClawAgentRuntimeDir(agentId: string): string {
+  return join(getOpenClawAgentsDir(), agentId);
+}
+
+export function getOpenClawAgentDir(agentId: string): string {
+  return join(getOpenClawAgentRuntimeDir(agentId), 'agent');
+}
+
+export function getOpenClawWorkspaceDir(agentId = 'main'): string {
+  return join(getOpenClawConfigDir(), agentId === 'main' ? 'workspace' : `workspace-${agentId}`);
+}
+
+export function getOpenClawRuntimeEnv(): Record<string, string> {
+  const stateDir = getOpenClawStateDir();
+  return {
+    OPENCLAW_STATE_DIR: stateDir,
+    OPENCLAW_CONFIG_PATH: getOpenClawConfigPath(),
+    OPENCLAW_WORKSPACE_DIR: getOpenClawWorkspaceDir(),
+  };
 }
 
 /**

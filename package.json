@@ -1,5 +1,5 @@
 {
-    "name": "clawx",
+    "name": "jdiclaw",
     "version": "0.2.4",
     "pnpm": {
         "onlyBuiltDependencies": [
@@ -16,9 +16,9 @@
             "isbinaryfile": "^5.0.0"
         }
     },
-    "description": "ClawX - Graphical AI Assistant based on OpenClaw",
+    "description": "JdiCLaw - Enterprise AI Agent desktop workspace based on OpenClaw",
     "main": "dist-electron/main/index.js",
-    "author": "ClawX Team",
+    "author": "JdiCLaw Team",
     "license": "MIT",
     "private": true,
     "scripts": {

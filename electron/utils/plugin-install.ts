@@ -8,9 +8,9 @@
 import { app } from 'electron';
 import path from 'node:path';
 import { existsSync, cpSync, mkdirSync, rmSync, readFileSync, writeFileSync, readdirSync, realpathSync } from 'node:fs';
-import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { logger } from './logger';
+import { getOpenClawExtensionsDir } from './paths';
 
 // ── Known plugin-ID corrections ─────────────────────────────────────────────
 // Some npm packages ship with an openclaw.plugin.json whose "id" field
@@ -21,7 +21,7 @@ const MANIFEST_ID_FIXES: Record<string, string> = {
 };
 
 /**
- * After a plugin has been copied to ~/.openclaw/extensions/<dir>, fix any
+ * After a plugin has been copied to the managed extensions directory, fix any
  * known manifest-ID mismatches so the Gateway can load the plugin.
  * Also patches package.json fields that the Gateway uses as "entry hints".
  */
@@ -263,7 +263,7 @@ export function ensurePluginInstalled(
   candidateSources: string[],
   pluginLabel: string,
 ): { installed: boolean; warning?: string } {
-  const targetDir = join(homedir(), '.openclaw', 'extensions', pluginDirName);
+  const targetDir = join(getOpenClawExtensionsDir(), pluginDirName);
   const targetManifest = join(targetDir, 'openclaw.plugin.json');
   const targetPkgJson = join(targetDir, 'package.json');
 
@@ -286,7 +286,7 @@ export function ensurePluginInstalled(
   // Fresh install or upgrade — try bundled/build sources first
   if (sourceDir) {
     try {
-      mkdirSync(join(homedir(), '.openclaw', 'extensions'), { recursive: true });
+      mkdirSync(getOpenClawExtensionsDir(), { recursive: true });
       rmSync(targetDir, { recursive: true, force: true });
       cpSync(sourceDir, targetDir, { recursive: true, dereference: true });
       if (!existsSync(join(targetDir, 'openclaw.plugin.json'))) {
@@ -314,7 +314,7 @@ export function ensurePluginInstalled(
             `${installedVersion ? `: ${installedVersion} → ${sourceVersion}` : `: ${sourceVersion}`} (dev/node_modules)`,
           );
           try {
-            mkdirSync(join(homedir(), '.openclaw', 'extensions'), { recursive: true });
+            mkdirSync(getOpenClawExtensionsDir(), { recursive: true });
             copyPluginFromNodeModules(npmPkgPath, targetDir, npmName);
             fixupPluginManifest(targetDir);
             if (existsSync(join(targetDir, 'openclaw.plugin.json'))) {
