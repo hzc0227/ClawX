@@ -1,4 +1,4 @@
-export const SUPPORTED_LANGUAGE_CODES = ['en', 'zh', 'ja'] as const;
+export const SUPPORTED_LANGUAGE_CODES = ['en', 'zh'] as const;
 
 export type LanguageCode = (typeof SUPPORTED_LANGUAGE_CODES)[number];
 
@@ -10,7 +10,7 @@ function normalizeLocale(locale: string | null | undefined): string {
 
 export function resolveSupportedLanguage(
   locale: string | null | undefined,
-  fallback: LanguageCode = 'en',
+  fallback: LanguageCode = 'zh',
 ): LanguageCode {
   const normalizedLocale = normalizeLocale(locale);
   if (!normalizedLocale) {
