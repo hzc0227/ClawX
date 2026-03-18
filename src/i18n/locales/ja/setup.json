@@ -1,147 +1,88 @@
 {
-    "steps": {
-        "welcome": {
-            "title": "JdiCLawへようこそ",
-            "description": "AIアシスタントの設定準備が整いました"
-        },
-        "runtime": {
-            "title": "環境チェック",
-            "description": "システム要件を確認中"
-        },
-        "provider": {
-            "title": "AIプロバイダー",
-            "description": "AIサービスを構成"
-        },
-        "channel": {
-            "title": "チャンネル接続",
-            "description": "メッセージングプラットフォームを接続（オプション）"
-        },
-        "installing": {
-            "title": "セットアップ中",
-            "description": "必須コンポーネントをインストール中"
-        },
-        "complete": {
-            "title": "完了！",
-            "description": "JdiCLawを使用する準備が整いました"
-        }
-    },
+  "steps": {
     "welcome": {
-        "title": "JdiCLawへようこそ",
-        "description": "JdiCLawは OpenClaw をベースにした企業向けデスクトップエージェントワークスペースで、AI アシスタントと社内業務機能を 1 つの UI で利用できます。",
-        "features": {
-            "noCommand": "コマンドライン不要",
-            "modernUI": "モダンで美しいインターフェース",
-            "bundles": "プリインストールされたスキルバンドル",
-            "crossPlatform": "クロスプラットフォーム対応"
-        }
+      "title": "JdiCLawへようこそ",
+      "description": "これから企業向けワークスペースを初期化します"
+    },
+    "identity": {
+      "title": "企業アイデンティティ準備",
+      "description": "企業向け認証導線のプレースホルダーを確認します"
     },
     "runtime": {
-        "title": "環境をチェック中",
-        "viewLogs": "ログを表示",
-        "recheck": "再チェック",
-        "nodejs": "Node.js ランタイム",
-        "openclaw": "OpenClaw パッケージ",
-        "gateway": "ゲートウェイサービス",
-        "startGateway": "ゲートウェイを起動",
-        "status": {
-            "checking": "確認中...",
-            "success": "Node.js は利用可能です",
-            "error": "失敗",
-            "gatewayRunning": "ポート {{port}} で実行中",
-            "packageReady": "OpenClaw パッケージ準備完了"
-        },
-        "issue": {
-            "title": "環境の問題が検出されました",
-            "desc": "OpenClawが正しくインストールされていることを確認してください。詳細はログを確認してください。"
-        },
-        "logs": {
-            "title": "アプリケーションログ",
-            "openFolder": "ログフォルダを開く",
-            "close": "閉じる",
-            "noLogs": "（ログはまだありません）"
-        }
-    },
-    "provider": {
-        "label": "モデルプロバイダー",
-        "selectPlaceholder": "プロバイダーを選択...",
-        "baseUrl": "ベース URL",
-        "modelId": "モデル ID",
-        "modelIdDesc": "プロバイダーのモデル識別子（例：deepseek-ai/DeepSeek-V3）",
-        "protocol": "プロトコル",
-        "protocols": {
-            "openaiCompletions": "OpenAI Completions",
-            "openaiResponses": "OpenAI Responses",
-            "anthropic": "Anthropic 互換"
-        },
-        "apiKey": "API キー",
-        "save": "保存",
-        "validateSave": "検証して保存",
-        "valid": "プロバイダーが正常に構成されました",
-        "invalid": "無効な API キー",
-        "storedLocally": "API キーはローカルマシンに保存されます。"
-    },
-    "channel": {
-        "title": "メッセージングチャンネルを接続",
-        "subtitle": "AIアシスタントを接続するプラットフォームを選択してください。チャンネルは後で設定で追加できます。",
-        "configure": "{{name}} を構成",
-        "howTo": "接続方法：",
-        "viewDocs": "ドキュメントを表示",
-        "validationError": "検証に失敗しました",
-        "connected": "{{name}} 接続済み",
-        "connectedDesc": "チャンネルが構成されました。ゲートウェイ起動時に接続されます。",
-        "configureAnother": "別のチャンネルを構成"
-    },
-    "installing": {
-        "title": "必須コンポーネントをインストール中",
-        "subtitle": "AIアシスタントに必要なツールをセットアップしています",
-        "progress": "進捗",
-        "status": {
-            "pending": "待機中",
-            "installing": "インストール中...",
-            "installed": "インストール済み",
-            "failed": "失敗"
-        },
-        "error": "セットアップエラー：",
-        "restart": "アプリを再起動してください",
-        "wait": "これには少し時間がかかる場合があります...",
-        "skip": "この手順をスキップ"
+      "title": "JdiCLaw ワークスペースを初期化",
+      "description": "コアサービス、エージェントエンジン、ローカル環境の準備状況を確認します"
     },
     "complete": {
-        "title": "セットアップ完了！",
-        "subtitle": "JdiCLawの構成が完了し、使用準備が整いました。AIアシスタントとのチャットを開始できます。",
-        "provider": "AI プロバイダー",
-        "components": "コンポーネント",
-        "gateway": "ゲートウェイ",
-        "running": "実行中",
-        "footer": "設定でスキルをカスタマイズしたり、チャンネルを接続したりできます"
-    },
-    "nav": {
-        "next": "次へ",
-        "back": "戻る",
-        "skipStep": "この手順をスキップ",
-        "skipSetup": "セットアップをスキップ",
-        "getStarted": "始める"
-    },
-    "defaultSkills": {
-        "opencode": {
-            "name": "OpenCode",
-            "description": "AI コーディングアシスタントのバックエンド"
-        },
-        "python-env": {
-            "name": "Python 環境",
-            "description": "スキルのための Python ランタイム"
-        },
-        "code-assist": {
-            "name": "コードアシスト",
-            "description": "コードの分析と提案"
-        },
-        "file-tools": {
-            "name": "ファイルツール",
-            "description": "ファイルの操作と管理"
-        },
-        "terminal": {
-            "name": "ターミナル",
-            "description": "シェルコマンドの実行"
-        }
+      "title": "準備完了",
+      "description": "初期化が完了し、JdiCLaw を利用できます"
     }
+  },
+  "welcome": {
+    "title": "JdiCLawへようこそ",
+    "description": "JdiCLaw は、ナレッジ Q&A、業務問い合わせ、自動化タスクを 1 つの UI で扱える企業向けデスクトップエージェントワークスペースです。",
+    "features": {
+      "workspace": "統一された企業向けエージェントワークスペース",
+      "skills": "社内向けスキルと拡張機能を事前搭載",
+      "automation": "定時実行と自動化フローをサポート",
+      "support": "ログと診断機能を備え、サポートしやすい構成"
+    }
+  },
+  "identity": {
+    "title": "企業アイデンティティ準備",
+    "subtitle": "このバージョンでは既定で通過するプレースホルダーです。将来のバージョンで企業 SSO や ID 連携を追加します。",
+    "statusTitle": "現在の状態",
+    "statusPass": "企業アイデンティティ準備は現在、既定で完了扱いとなっており、そのまま初期化を続行できます。",
+    "todo": "TODO: 将来のバージョンで企業ログイン、デバイス紐付け、権限チェックを統合する。"
+  },
+  "runtime": {
+    "title": "JdiCLaw ワークスペースを初期化",
+    "subtitle": "JdiCLaw は、コアサービス、エージェントエンジン、ローカルワークスペース環境の準備状況を確認しています。",
+    "viewLogs": "ログを表示",
+    "recheck": "再チェック",
+    "core": "コアサービス",
+    "engine": "エージェントエンジン",
+    "workspace": "ローカルワークスペース環境",
+    "startCore": "コアサービスを起動",
+    "status": {
+      "checking": "確認中...",
+      "error": "失敗",
+      "coreChecking": "コアサービスを起動中...",
+      "coreReady": "ポート {{port}} で利用可能",
+      "coreTimeout": "コアサービスの起動がタイムアウトしました",
+      "engineReady": "エージェントエンジン準備完了",
+      "engineFailed": "エージェントエンジンを利用できません",
+      "workspaceReady": "ローカルワークスペース準備完了"
+    },
+    "issue": {
+      "title": "初期化が完全には完了していません",
+      "desc": "ログを確認するか、再試行してください。問題が続く場合は、製品サポートまたは開発チームに連絡してください。"
+    },
+    "logs": {
+      "title": "アプリケーションログ",
+      "openFolder": "ログフォルダを開く",
+      "close": "閉じる",
+      "noLogs": "（ログはまだありません）"
+    }
+  },
+  "complete": {
+    "title": "JdiCLaw の初期化が完了しました",
+    "subtitle": "JdiCLaw ワークスペースの準備が整いました。メイン画面へ進めます。",
+    "identity": "企業アイデンティティ準備",
+    "workspace": "ローカルワークスペース環境",
+    "core": "コアサービス",
+    "ready": "準備完了",
+    "nextTitle": "次にできること：",
+    "next": {
+      "chat": "メイン画面に入り、業務会話や問い合わせを開始する",
+      "settings": "モデルサービスは後から設定ページで構成する",
+      "automation": "定時タスク画面から自動化タスクを作成する"
+    },
+    "footer": "モデルサービス設定は初回セットアップから外し、後から設定ページで個別に構成できるようにしています。",
+    "toast": "JdiCLaw の初期化が完了しました"
+  },
+  "nav": {
+    "next": "次へ",
+    "back": "戻る",
+    "getStarted": "開始する"
+  }
 }

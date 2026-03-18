@@ -1,147 +1,88 @@
 {
-    "steps": {
-        "welcome": {
-            "title": "Welcome to JdiCLaw",
-            "description": "Your AI assistant is ready to be configured"
-        },
-        "runtime": {
-            "title": "Environment Check",
-            "description": "Verifying system requirements"
-        },
-        "provider": {
-            "title": "AI Provider",
-            "description": "Configure your AI service"
-        },
-        "channel": {
-            "title": "Connect a Channel",
-            "description": "Connect a messaging platform (optional)"
-        },
-        "installing": {
-            "title": "Setting Up",
-            "description": "Installing essential components"
-        },
-        "complete": {
-            "title": "All Set!",
-            "description": "JdiCLaw is ready to use"
-        }
-    },
+  "steps": {
     "welcome": {
-        "title": "Welcome to JdiCLaw",
-        "description": "JdiCLaw is an enterprise desktop agent workspace built on OpenClaw, making it easy to use AI assistants and internal business capabilities in one place.",
-        "features": {
-            "noCommand": "Zero command-line required",
-            "modernUI": "Modern, beautiful interface",
-            "bundles": "Pre-installed skill bundles",
-            "crossPlatform": "Cross-platform support"
-        }
+      "title": "Welcome to JdiCLaw",
+      "description": "We are about to initialize your enterprise workspace"
+    },
+    "identity": {
+      "title": "Enterprise Identity Preparation",
+      "description": "Check the placeholder enterprise identity step"
     },
     "runtime": {
-        "title": "Checking Environment",
-        "viewLogs": "View Logs",
-        "recheck": "Re-check",
-        "nodejs": "Node.js Runtime",
-        "openclaw": "OpenClaw Package",
-        "gateway": "Gateway Service",
-        "startGateway": "Start Gateway",
-        "status": {
-            "checking": "Checking...",
-            "success": "Node.js is available",
-            "error": "Failed",
-            "gatewayRunning": "Running on port {{port}}",
-            "packageReady": "OpenClaw package ready"
-        },
-        "issue": {
-            "title": "Environment issue detected",
-            "desc": "Please ensure OpenClaw is properly installed. Check the logs for details."
-        },
-        "logs": {
-            "title": "Application Logs",
-            "openFolder": "Open Log Folder",
-            "close": "Close",
-            "noLogs": "(No logs available yet)"
-        }
-    },
-    "provider": {
-        "label": "Model Provider",
-        "selectPlaceholder": "Select a provider...",
-        "baseUrl": "Base URL",
-        "modelId": "Model ID",
-        "modelIdDesc": "The model identifier from your provider (e.g. deepseek-ai/DeepSeek-V3)",
-        "protocol": "Protocol",
-        "protocols": {
-            "openaiCompletions": "OpenAI Completions",
-            "openaiResponses": "OpenAI Responses",
-            "anthropic": "Anthropic Compatible"
-        },
-        "apiKey": "API Key",
-        "save": "Save",
-        "validateSave": "Validate & Save",
-        "valid": "Provider configured successfully",
-        "invalid": "Invalid API key",
-        "storedLocally": "Your API key is stored locally on your machine."
-    },
-    "channel": {
-        "title": "Connect a Messaging Channel",
-        "subtitle": "Choose a platform to connect your AI assistant to. You can add more channels later in Settings.",
-        "configure": "Configure {{name}}",
-        "howTo": "How to connect:",
-        "viewDocs": "View docs",
-        "validationError": "Validation failed",
-        "connected": "{{name}} Connected",
-        "connectedDesc": "Your channel has been configured. It will connect when the Gateway starts.",
-        "configureAnother": "Configure another channel"
-    },
-    "installing": {
-        "title": "Installing Essential Components",
-        "subtitle": "Setting up the tools needed to power your AI assistant",
-        "progress": "Progress",
-        "status": {
-            "pending": "Pending",
-            "installing": "Installing...",
-            "installed": "Installed",
-            "failed": "Failed"
-        },
-        "error": "Setup Error:",
-        "restart": "Try restarting the app",
-        "wait": "This may take a few moments...",
-        "skip": "Skip this step"
+      "title": "Initialize the JdiCLaw Workspace",
+      "description": "Confirm that core services, agent engine, and local workspace are ready"
     },
     "complete": {
-        "title": "Setup Complete!",
-        "subtitle": "JdiCLaw is configured and ready to use. You can now start chatting with your AI assistant.",
-        "provider": "AI Provider",
-        "components": "Components",
-        "gateway": "Gateway",
-        "running": "Running",
-        "footer": "You can customize skills and connect channels in Settings"
-    },
-    "nav": {
-        "next": "Next",
-        "back": "Back",
-        "skipStep": "Skip this step",
-        "skipSetup": "Skip Setup",
-        "getStarted": "Get Started"
-    },
-    "defaultSkills": {
-        "opencode": {
-            "name": "OpenCode",
-            "description": "AI coding assistant backend"
-        },
-        "python-env": {
-            "name": "Python Environment",
-            "description": "Python runtime for skills"
-        },
-        "code-assist": {
-            "name": "Code Assist",
-            "description": "Code analysis and suggestions"
-        },
-        "file-tools": {
-            "name": "File Tools",
-            "description": "File operations and management"
-        },
-        "terminal": {
-            "name": "Terminal",
-            "description": "Shell command execution"
-        }
+      "title": "All Set",
+      "description": "Initialization is complete and JdiCLaw is ready"
     }
+  },
+  "welcome": {
+    "title": "Welcome to JdiCLaw",
+    "description": "JdiCLaw is an enterprise desktop agent workspace designed for knowledge Q&A, business queries, and task automation in one place.",
+    "features": {
+      "workspace": "A unified enterprise agent workspace",
+      "skills": "Preloaded business skills and extension capabilities",
+      "automation": "Support for scheduled tasks and automation flows",
+      "support": "Built-in logs and diagnostics for support and troubleshooting"
+    }
+  },
+  "identity": {
+    "title": "Enterprise Identity Preparation",
+    "subtitle": "This version uses a default pass-through placeholder. Enterprise SSO or identity binding will be added in a later version.",
+    "statusTitle": "Current Status",
+    "statusPass": "Enterprise identity preparation is currently marked as ready by default, so setup can continue.",
+    "todo": "TODO: Integrate enterprise login, device binding, and permission checks in a future version."
+  },
+  "runtime": {
+    "title": "Initialize the JdiCLaw Workspace",
+    "subtitle": "JdiCLaw is confirming that the core service, agent engine, and local workspace environment are ready.",
+    "viewLogs": "View Logs",
+    "recheck": "Re-check",
+    "core": "Core Service",
+    "engine": "Agent Engine",
+    "workspace": "Local Workspace Environment",
+    "startCore": "Start Core Service",
+    "status": {
+      "checking": "Checking...",
+      "error": "Failed",
+      "coreChecking": "Starting core service...",
+      "coreReady": "Ready on port {{port}}",
+      "coreTimeout": "Core service startup timed out",
+      "engineReady": "Agent engine ready",
+      "engineFailed": "Agent engine unavailable",
+      "workspaceReady": "Local workspace ready"
+    },
+    "issue": {
+      "title": "Initialization is not fully complete",
+      "desc": "Please review the logs or retry initialization. If the problem persists, contact product support or the development team."
+    },
+    "logs": {
+      "title": "Application Logs",
+      "openFolder": "Open Log Folder",
+      "close": "Close",
+      "noLogs": "(No logs available yet)"
+    }
+  },
+  "complete": {
+    "title": "JdiCLaw Initialization Complete",
+    "subtitle": "Your JdiCLaw workspace is ready. You can now enter the main application.",
+    "identity": "Enterprise Identity Preparation",
+    "workspace": "Local Workspace Environment",
+    "core": "Core Service",
+    "ready": "Ready",
+    "nextTitle": "Next, you can:",
+    "next": {
+      "chat": "Enter the main workspace and start business conversations",
+      "settings": "Configure model services later in the Settings page",
+      "automation": "Create automation tasks later from the scheduled tasks page"
+    },
+    "footer": "Model service configuration has been removed from first-run setup and can be configured later in Settings.",
+    "toast": "JdiCLaw initialization complete"
+  },
+  "nav": {
+    "next": "Next",
+    "back": "Back",
+    "getStarted": "Get Started"
+  }
 }

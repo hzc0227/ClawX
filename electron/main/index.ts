@@ -141,7 +141,9 @@ function createWindow(): BrowserWindow {
 
   // Load the app
   if (process.env.VITE_DEV_SERVER_URL) {
-    win.loadURL(process.env.VITE_DEV_SERVER_URL);
+    const devUrl = new URL(process.env.VITE_DEV_SERVER_URL);
+    devUrl.hash = '/setup';
+    win.loadURL(devUrl.toString());
     win.webContents.openDevTools();
   } else {
     win.loadFile(join(__dirname, '../../dist/index.html'));
