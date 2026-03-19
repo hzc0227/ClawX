@@ -77,9 +77,9 @@ Observed results:
 
 JdiCLaw no longer reuses the user's default `~/.openclaw` directory by default.
 
-The desktop app now manages an isolated OpenClaw state directory under the app data path:
+The desktop app now manages an isolated OpenClaw state directory under a dedicated home directory:
 
-- macOS dev path example: `~/Library/Application Support/jdiclaw/openclaw`
+- macOS dev path example: `~/.jdiclaw`
 
 This isolated directory is used for:
 
@@ -112,9 +112,9 @@ After startup, confirm logs and generated files point to the isolated app direct
 
 Examples observed during verification:
 
-- skills installed under `~/Library/Application Support/jdiclaw/openclaw/skills`
-- plugins installed under `~/Library/Application Support/jdiclaw/openclaw/extensions`
-- workspace under `~/Library/Application Support/jdiclaw/openclaw/workspace`
+- skills installed under `~/.jdiclaw/skills`
+- plugins installed under `~/.jdiclaw/extensions`
+- workspace under `~/.jdiclaw/workspace`
 
 ## Recommended Team Workflow
 

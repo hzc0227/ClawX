@@ -34,13 +34,13 @@ export function getPort(key: keyof typeof PORTS): number {
  */
 export const APP_PATHS = {
   /** OpenClaw configuration directory */
-  OPENCLAW_CONFIG: '~/Library/Application Support/JdiCLaw/openclaw',
+  OPENCLAW_CONFIG: '~/.jdiclaw',
   
   /** ClawX configuration directory */
-  CLAWX_CONFIG: '~/.clawx',
+  CLAWX_CONFIG: '~/.jdiclaw',
   
   /** Log files directory */
-  LOGS: '~/.clawx/logs',
+  LOGS: '~/.jdiclaw/logs',
 } as const;
 
 /**

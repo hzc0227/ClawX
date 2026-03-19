@@ -123,7 +123,7 @@ Electron Main 侧也已经有现成的 API 路由：
 
 开发环境下的 macOS 示例路径：
 
-- `~/Library/Application Support/jdiclaw/openclaw`
+- `~/.jdiclaw`
 
 该目录承载：
 

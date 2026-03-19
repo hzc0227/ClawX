@@ -35,13 +35,17 @@ export function toHomeTildePath(path: string): string {
   return path;
 }
 
+export function getJdiClawHomeDir(): string {
+  return join(homedir(), '.jdiclaw');
+}
+
 /**
  * Get JdiCLaw-managed OpenClaw state directory.
  * This intentionally does not reuse ~/.openclaw so the desktop product
  * keeps its own isolated runtime data.
  */
 export function getOpenClawConfigDir(): string {
-  return join(getDataDir(), 'openclaw');
+  return getJdiClawHomeDir();
 }
 
 export function getOpenClawStateDir(): string {
@@ -100,7 +104,7 @@ export function getOpenClawRuntimeEnv(): Record<string, string> {
  * Get ClawX config directory
  */
 export function getClawXConfigDir(): string {
-  return join(homedir(), '.clawx');
+  return getJdiClawHomeDir();
 }
 
 /**

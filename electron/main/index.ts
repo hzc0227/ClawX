@@ -36,6 +36,7 @@ import { deviceOAuthManager } from '../utils/device-oauth';
 import { browserOAuthManager } from '../utils/browser-oauth';
 import { whatsAppLoginManager } from '../utils/whatsapp-login';
 import { syncAllProviderAuthToRuntime } from '../services/providers/provider-runtime-sync';
+import { migrateLegacyJdiClawData } from '../utils/jdiclaw-data-migration';
 
 const WINDOWS_APP_USER_MODEL_ID = 'app.clawx.desktop';
 
@@ -218,6 +219,8 @@ async function initialize(): Promise<void> {
   logger.debug(
     `Runtime: platform=${process.platform}/${process.arch}, electron=${process.versions.electron}, node=${process.versions.node}, packaged=${app.isPackaged}`
   );
+
+  migrateLegacyJdiClawData();
 
   // Warm up network optimization (non-blocking)
   void warmupNetworkOptimization();
