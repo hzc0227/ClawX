@@ -560,8 +560,8 @@ function CompleteContent() {
   const gatewayStatus = useGatewayStore((state) => state.status);
 
   return (
-    <div className="space-y-6 text-center">
-      <div className="mb-4 text-6xl">🎉</div>
+    <div className="space-y-5 text-center">
+      <div className="mb-2 text-5xl">🎉</div>
       <h2 className="text-xl font-semibold">{t('complete.title')}</h2>
       <p className="text-muted-foreground">{t('complete.subtitle')}</p>
 
@@ -581,17 +581,6 @@ function CompleteContent() {
           </span>
         </div>
       </div>
-
-      <div className="rounded-lg border bg-muted/30 p-4 text-left">
-        <p className="text-sm font-medium text-foreground">{t('complete.nextTitle')}</p>
-        <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-          <li>{t('complete.next.chat')}</li>
-          <li>{t('complete.next.settings')}</li>
-          <li>{t('complete.next.automation')}</li>
-        </ul>
-      </div>
-
-      <p className="text-sm text-muted-foreground">{t('complete.footer')}</p>
     </div>
   );
 }

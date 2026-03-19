@@ -66,18 +66,11 @@
   },
   "complete": {
     "title": "JdiCLaw Initialization Complete",
-    "subtitle": "Your JdiCLaw workspace is ready. You can now enter the main application.",
+    "subtitle": "Your JdiCLaw workspace is ready.",
     "identity": "Enterprise Identity Preparation",
     "workspace": "Local Workspace Environment",
     "core": "Core Service",
     "ready": "Ready",
-    "nextTitle": "Next, you can:",
-    "next": {
-      "chat": "Enter the main workspace and start business conversations",
-      "settings": "Configure model services later in the Settings page",
-      "automation": "Create automation tasks later from the scheduled tasks page"
-    },
-    "footer": "Model service configuration has been removed from first-run setup and can be configured later in Settings.",
     "toast": "JdiCLaw initialization complete"
   },
   "nav": {

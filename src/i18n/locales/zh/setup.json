@@ -66,18 +66,11 @@
   },
   "complete": {
     "title": "JdiCLaw 初始化完成",
-    "subtitle": "JdiCLaw 工作台已经准备就绪，您现在可以进入主界面开始使用。",
+    "subtitle": "JdiCLaw 工作台已经准备就绪。",
     "identity": "企业身份准备",
     "workspace": "本地工作台环境",
     "core": "核心服务",
     "ready": "已就绪",
-    "nextTitle": "接下来您可以：",
-    "next": {
-      "chat": "进入主界面开始会话与业务问答",
-      "settings": "前往设置页面单独配置模型服务",
-      "automation": "后续在定时任务页面创建自动化任务"
-    },
-    "footer": "模型服务配置已从首次启动流程中隐藏，后续可在设置页面按需单独配置。",
     "toast": "JdiCLaw 初始化已完成"
   },
   "nav": {
